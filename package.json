@@ -1,0 +1,22 @@
+{
+  "name": "adopcion-gatos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florencianionquepan/adopcion-gatos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/florencianionquepan/adopcion-gatos/issues"
+  },
+  "homepage": "https://github.com/florencianionquepan/adopcion-gatos#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
