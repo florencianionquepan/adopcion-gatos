@@ -1,0 +1,42 @@
+body{
+    background-image:url(https://i.pinimg.com/564x/f4/04/a6/f404a6ff49800efe89c933ebf761a7b9.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header{
+    background-color: rgb(232, 213, 255);
+}
+
+footer{
+    background-color: whitesmoke;
+}
+
+#destacados{
+background-color: #ffeef5;
+}
+
+#contenido{
+    background-color: #ffeef5;
+}
+
+#menu li{
+    padding-top:0.5em;
+}
+
+#pie{
+    padding:1em;
+    border-top:1px solid #dee2e6;
+    border-bottom:1px solid #dee2e6;
+    
+}
+
+#destacados{
+    margin-top:3em;
+    margin-bottom:3em;
+}
+
+#contenido{
+    margin:3em;
+}
