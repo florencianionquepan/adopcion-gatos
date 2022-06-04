@@ -70,7 +70,15 @@ function verDetalles(nro){
 
 }
 
+//IR A INICIO
+const $inicioVolver=document.querySelector("#inicio");
 
+$inicioVolver.onclick=function(){
+    document.querySelector('#div-acceder').className='oculto';
+    document.querySelector('#detalles').className='oculto';
+    document.querySelector('#destacados').className='border rounded fondo m-1';
+    document.querySelector('#contenido').className='text-center border rounded fondo m-5';
+}
 
 //BOTON ACCEDER
 const $acceder=document.querySelector('#acceder');
