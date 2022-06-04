@@ -2,7 +2,6 @@
     display: none;
 }
 
-
 body{
     background-image:url(https://i.pinimg.com/564x/f4/04/a6/f404a6ff49800efe89c933ebf761a7b9.jpg);
     background-repeat: no-repeat;
@@ -10,7 +9,7 @@ body{
     background-size: cover;
 }
 
-header{
+header, footer{
     background-color: rgb(232, 213, 255);
 }
 
@@ -18,10 +17,6 @@ header h4{
     padding-left:0;
     margin-bottom: 0;
     color:rgb(38, 9, 75);
-}
-
-footer{
-    background-color: whitesmoke;
 }
 
 .fondo{
@@ -42,7 +37,6 @@ background-color: #ffeef5;
     border-bottom:1px solid #dee2e6;
     
 }
-
 
 #form-acceder{
     padding:2em;
