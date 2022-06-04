@@ -1,7 +1,7 @@
 {   "destacado":[{
     "id":1,
     "nombre":"Nala",
-    "srcFoto":"",
+    "srcFoto":["img/nala-.jpg","img/nala+.jpg"],
     "edad":"6 meses",
     "sexo":"Hembra",
     "descripcion":"Nala fue encontrada recientemente debajo de un auto, es muy caroiñosa y le gusta estar dentro de su casa",
@@ -17,7 +17,7 @@
 {
         "id":5,
         "nombre":"Susi",
-        "srcFoto":"img/susi+.jpg",
+        "srcFoto":["img/susi-.jpg","img/susi+.jpg"],
         "edad":"45 dias",
         "sexo":"Hembra",
         "descripcion":"Susi es la menor de 5 hermanos. Tiene 45 dias y ya esta lista para buscar un hogar. No le agradan los niños.",
@@ -31,7 +31,7 @@
     {
         "id":6,
         "nombre":"Atenea",
-        "srcFoto":"",
+        "srcFoto":["img/atenea-.jpg","img/atenea+.jpg"],
         "edad":"2 meses",
         "sexo":"Hembra",
         "descripcion":"Atenea fue encontrada en un baldio con sus hermanitos. Todos fueron dados en adopcion, pero ella sigue con nosotros y nuestros perros. Se lleva muy bien con todos y le gusta jugar con ellos.",
@@ -45,7 +45,7 @@
     {
         "id":7,
         "nombre":"Chobi",
-        "srcFoto":"",
+        "srcFoto":["img/chobi-.jpg","img/chobi+.jpg"],
         "edad":"2 meses",
         "sexo":"Macho",
         "descripcion":"Chobi fue encontrado solo en las vias del tren. Tiene 2 meses de edad y le gusta mucho el pescado.",
@@ -59,7 +59,7 @@
     {
         "id":8,
         "nombre":"Reina",
-        "srcFoto":"",
+        "srcFoto":["img/reina-.jpg","img/reina+.jpg"],
         "edad":"5 meses",
         "sexo":"Hembra",
         "descripcion":"Reina tiene 5 meses. Es cariñosa con los niños.",
@@ -73,7 +73,7 @@
     {
         "id":9,
         "nombre":"Thor",
-        "srcFoto":"",
+        "srcFoto":["img/thor-.jpg","img/thor+.jpg"],
         "edad":"45 dias",
         "sexo":"Macho",
         "descripcion":"A Thor no le gustan los ruidos molestos. Se lleva muy bien con la gente mayor",
@@ -87,7 +87,7 @@
     {
         "id":10,
         "nombre":"Miyu",
-        "srcFoto":"",
+        "srcFoto":["img/miyu-.jpg","img/miyu+.jpg"],
         "edad":"3 meses",
         "sexo":"Macho",
         "descripcion":"Miyu se lleva muy bien con otros gatos",
@@ -101,7 +101,7 @@
     {
         "id":11,
         "nombre":"Coco",
-        "srcFoto":"",
+        "srcFoto":["img/coco-.jpg","img/coco+.jpg"],
         "edad":"2 meses",
         "sexo":"Macho",
         "descripcion":"Coco tiene 2 meses de edad. Le gustan los niños",
@@ -115,7 +115,7 @@
     {
         "id":12,
         "nombre":"Masato",
-        "srcFoto":"",
+        "srcFoto":["img/masato-.jpg","img/masato+.jpg"],
         "edad":"4 meses",
         "sexo":"Macho",
         "descripcion":"Masato es el mayor de 3 hermanos",
@@ -129,7 +129,7 @@
     {
         "id":13,
         "nombre":"Masato",
-        "srcFoto":"",
+        "srcFoto":["img/masato-.jpg","img/masato+.jpg"],
         "edad":"4 meses",
         "sexo":"Macho",
         "descripcion":"Masato es el mayor de 3 hermanos",
@@ -143,7 +143,7 @@
     {
         "id":14,
         "nombre":"Alex",
-        "srcFoto":"",
+        "srcFoto":["img/alex-.jpg","img/alex+.jpg"],
         "edad":"5 meses",
         "sexo":"Macho",
         "descripcion":"Alex tiene 8 meses de edad",
@@ -157,7 +157,7 @@
     {
         "id":15,
         "nombre":"Amon",
-        "srcFoto":"",
+        "srcFoto":["img/amon-.jpg","img/amon+.jpg"],
         "edad":"3 meses",
         "sexo":"Macho",
         "descripcion":"Amon tiene 3 meses de edad. Le gusta asustar a los vecinos.",
