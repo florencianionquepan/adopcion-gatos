@@ -142,20 +142,6 @@
     },
     {
         "id":14,
-        "nombre":"Alex",
-        "srcFoto":["img/alex-.jpg","img/alex+.jpg"],
-        "edad":"5 meses",
-        "sexo":"Macho",
-        "descripcion":"Alex tiene 8 meses de edad",
-        "raza":"Común europeo",
-        "color":"Blanco y gris",
-        "tipoPelo":"Corto",
-        "esterilizacion":true,
-        "desparasitacion":true,
-        "vacunas":[true,true,false]
-    },
-    {
-        "id":15,
         "nombre":"Amon",
         "srcFoto":["img/amon-.jpg","img/amon+.jpg"],
         "edad":"3 meses",
