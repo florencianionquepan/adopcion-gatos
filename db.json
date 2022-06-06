@@ -1,21 +1,33 @@
 {   "destacado":[{
     "id":1,
     "nombre":"Nala",
-    "srcFoto":["img/nala-.jpg","img/nala+.jpg"],
-    "edad":"6 meses",
-    "sexo":"Hembra",
-    "descripcion":"Nala fue encontrada recientemente debajo de un auto, es muy caroiñosa y le gusta estar dentro de su casa",
-    "raza":"Común europeo",
-    "color":"Blanco",
-    "tipoPelo":"Largo",
-    "esterilizacion":true,
-    "desparasitacion":true,
-    "vacunas":[true,true,false]
+    "srcFoto":["img/nalad.jpg"]
+},
+{
+    "id":2,
+    "nombre":"Pepe",
+    "srcFoto":["img/peped.jpg"]
+},
+{
+    "id":3,
+    "nombre":"Carlos",
+    "srcFoto":["img/carlosd.jpg"]
+
+},
+{
+    "id":4,
+    "nombre":"Felix",
+    "srcFoto":["img/felixd.jpg"]
+},
+{
+    "id":5,
+    "nombre":"Sara",
+    "srcFoto":["img/sarad.jpg"]
 }
 ],
     "gato":[
 {
-        "id":5,
+        "id":15,
         "nombre":"Susi",
         "srcFoto":["img/susi-.jpg","img/susi+.jpg"],
         "edad":"45 dias",
@@ -29,7 +41,7 @@
         "vacunas":[false,false,false]
     },
     {
-        "id":6,
+        "id":14,
         "nombre":"Atenea",
         "srcFoto":["img/atenea-.jpg","img/atenea+.jpg"],
         "edad":"2 meses",
@@ -43,7 +55,7 @@
         "vacunas":[true,true,false]
     },
     {
-        "id":7,
+        "id":13,
         "nombre":"Chobi",
         "srcFoto":["img/chobi-.jpg","img/chobi+.jpg"],
         "edad":"2 meses",
@@ -57,7 +69,7 @@
         "vacunas":[true,true,false]
     },
     {
-        "id":8,
+        "id":12,
         "nombre":"Reina",
         "srcFoto":["img/reina-.jpg","img/reina+.jpg"],
         "edad":"5 meses",
@@ -71,7 +83,7 @@
         "vacunas":[true,true,false]
     },
     {
-        "id":9,
+        "id":11,
         "nombre":"Thor",
         "srcFoto":["img/thor-.jpg","img/thor+.jpg"],
         "edad":"45 dias",
@@ -99,7 +111,7 @@
         "vacunas":[true,true,false]
     },
     {
-        "id":11,
+        "id":9,
         "nombre":"Coco",
         "srcFoto":["img/coco-.jpg","img/coco+.jpg"],
         "edad":"2 meses",
@@ -113,7 +125,7 @@
         "vacunas":[true,true,false]
     },
     {
-        "id":12,
+        "id":8,
         "nombre":"Masato",
         "srcFoto":["img/masato-.jpg","img/masato+.jpg"],
         "edad":"4 meses",
@@ -127,7 +139,7 @@
         "vacunas":[true,true,false]
     },
     {
-        "id":13,
+        "id":7,
         "nombre":"Alex",
         "srcFoto":["img/alex-.jpg","img/alex+.jpg"],
         "edad":"2 meses",
@@ -141,7 +153,7 @@
         "vacunas":[true,true,false]
     },
     {
-        "id":14,
+        "id":6,
         "nombre":"Amon",
         "srcFoto":["img/amon-.jpg","img/amon+.jpg"],
         "edad":"3 meses",
@@ -150,6 +162,76 @@
         "raza":"Común europeo",
         "color":"Marrón",
         "tipoPelo":"Corto",
+        "esterilizacion":true,
+        "desparasitacion":true,
+        "vacunas":[true,true,false]
+    },
+    {
+        "id":5,
+        "nombre":"Sara",
+        "srcFoto":["img/sara-.jpg","img/sara+.jpg","img/sarad.jpg"],
+        "edad":"3 años",
+        "sexo":"Hembra",
+        "descripcion":"Sara es una gata muy tranquila y se lleva muy bien con los perros.",
+        "raza":"Común europeo",
+        "color":"Naranja",
+        "tipoPelo":"Largo",
+        "esterilizacion":true,
+        "desparasitacion":true,
+        "vacunas":[true,true,false]
+    },
+    {
+        "id":4,
+        "nombre":"Felix",
+        "srcFoto":["img/felix-.jpg","img/feilx+.jpg","img/felixd.jpg"],
+        "edad":"2 años",
+        "sexo":"Macho",
+        "descripcion":"Felix vivia con sus dueños mayores y luego de que fallecieron quedo solo. Le gusta mucho jugar con lana.",
+        "raza":"Común europeo",
+        "color":"Marron",
+        "tipoPelo":"Corto",
+        "esterilizacion":true,
+        "desparasitacion":true,
+        "vacunas":[true,true,false]
+    },
+    {
+        "id":3,
+        "nombre":"Carlos",
+        "srcFoto":["img/carlos-.jpg","img/carlos+.jpg","img/carlosd.jpg"],
+        "edad":"3 años",
+        "sexo":"Macho",
+        "descripcion":"Carlos es un gato muy cariñospo. No camina bien por eso pasa mucho tiempo adentro.",
+        "raza":"Común europeo",
+        "color":"Marron",
+        "tipoPelo":"Corto",
+        "esterilizacion":true,
+        "desparasitacion":true,
+        "vacunas":[true,true,false]
+    },
+    {
+        "id":2,
+        "nombre":"Pepe",
+        "srcFoto":["img/pepe-.jpg","img/pepe+.jpg","img/peped.jpg"],
+        "edad":"2 años",
+        "sexo":"Macho",
+        "descripcion":"Pepe fue encontrado abandonado siendo adulto. Es muy cariñoso y se lleva bien con el resto de los gatos.",
+        "raza":"Común europeo",
+        "color":"Blanco y Negro",
+        "tipoPelo":"Corto",
+        "esterilizacion":true,
+        "desparasitacion":true,
+        "vacunas":[true,true,false]
+    },
+    {
+        "id":1,
+        "nombre":"Nala",
+        "srcFoto":["img/nala-.jpg","img/nala+.jpg","img/nalad.jpg"],
+        "edad":"6 meses",
+        "sexo":"Hembra",
+        "descripcion":"Nala fue encontrada recientemente debajo de un auto, es muy caroiñosa y le gusta estar dentro de su casa",
+        "raza":"Común europeo",
+        "color":"Blanco",
+        "tipoPelo":"Largo",
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false]
