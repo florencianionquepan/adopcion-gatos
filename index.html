@@ -14,7 +14,7 @@
     <!--MENU-->
     <div class="container-fluid">
         <header class="d-flex flex-wrap justify-content-center mb-4 border-bottom">
-            <a href="index.html" aria-current="page"
+            <a name="arriba" href="index.html" aria-current="page"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none nav-link active">
                 <img src="img/logo.png" width="40">
 
@@ -51,7 +51,7 @@
                     </form>
                 </div>
             </div>
-            
+
 
             <div class="row align-items-center pt-5">
                 <div class="col d-none d-sm-none d-md-block col-md-12 col-lg-10 mx-auto">
@@ -67,112 +67,234 @@
     </div>
 
 
-    <div id="destacados" class="border rounded fondo m-1">
+    <!--DESTACADOS -->
+    <div id="destacados" class="text-center border rounded fondo m-5">
         <div class="text-center">
-            <img src="https://cdn.colombia.com/sdi/2020/03/16/como-cuidar-gato-cambios-temperatura-819114.jpg"
-                class="rounded" alt="..." height="200px">
+            <img src="img/nalad.jpg">
         </div>
 
     </div>
 
+    <!--CONTENIDO PRINCIPAL-->
     <div id="contenido" class="text-center border rounded fondo m-5">
-
     </div>
 
 
     <!--DETALLES DE UN GATITO-->
     <div class="oculto" id="detalles">
-        <div class="row  align-items-center justify-content-md-center">
-          <div class="col-sm-6 g-2"><img class="img-fluid rounded" id="img"></div>
-          <div class="col-sm-2 g-2">
-              <table class="table table-borderless table-hover text-center">
-                <tr> <td><h3><span id="nombre"></span></h3></td> </tr>
-                <tr> <td><h5>Edad: <span id="edad"></span> </h5></td> </tr>
-                <tr> <td><h5>Sexo: <span id="sexo"></span></h5></td> </tr>
-              </table>
-          </div>
-        </div>
-        <div class="row justify-content-md-center">
-          <div class="col-sm-4 g-5 col-align-items-center ">
-                <table class="table"> 
-                  <thead><tr><th>CARACTERISTICAS</th></tr></thead>
-                  <tbody>
-                      <tr> <td>Raza: <span id="raza"></span></td> </tr>
-                      <tr> <td>Color: <span id="color"></span></td></tr>
-                      <tr> <td>Tipo de pelo: <span id="pelo"></span></td></tr>
-                  </tbody>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 pt-3 pl-5"><img class="img-fluid rounded mx-auto d-block" id="img">
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 pt-3">
+                <table class="table table-borderless table-hover text-center">
+                    <tr>
+                        <td>
+                            <h3><span id="nombre"></span></h3>
+                            <h5 class="oculto" id="getId"></h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>Edad: <span id="edad"></span> </h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>Sexo: <span id="sexo"></span></h5>
+                        </td>
+                    </tr>
                 </table>
             </div>
-          <div class="col-sm-4 g-5">
-            <table class="table"> 
-                <thead><tr><th>FICHA VETERINARIA</th></tr></thead>
-                <tbody>
-                        <tr class="custom-control custom-radio custom-control-inline"> <td>Esterilizado 
-                            <div class="float-end">
-                                <input type="radio" name="esterilizado" id="esterilizado" class="form-check-input-bg" 
-                                onclick="return false;">
-                                <label class="form-check-label">SI</label>
-                                <input type="radio" name="esterilizado" id="no-esterilizado" class="form-check-input-bg"
-                                checked onclick="return false;">
-                                <label class="form-check-label">NO</label>
-                            </div>
-                        </td> </tr>
-                        <tr class="custom-control custom-radio custom-control-inline"> <td>Desparasitado
-                            <div class="float-end">
-                                <input type="radio" name="desparasitado" id="desparasitado" class="form-check-input-bg" 
-                                onclick="return false;">
-                                <label class="form-check-label">SI</label>
-                                <input type="radio" name="desparasitado" id="no-desparasitado" class="form-check-input-bg"
-                                checked onclick="return false;">
-                                <label class="form-check-label">NO</label>
-                            </div>
-                        </td></tr>
-                        <table class="table"> 
-                            <tr> <th>Vacunas</th></tr>
-                            <tr class="custom-control custom-radio custom-control-inline"> <td>Rabia
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5 g-5 col-align-items-center ">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>CARACTERISTICAS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Raza: <span id="raza"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Color: <span id="color"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Tipo de pelo: <span id="pelo"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 col-md-5 g-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>FICHA VETERINARIA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="custom-control custom-radio custom-control-inline">
+                            <td>Esterilizado
                                 <div class="float-end">
-                                    <input type="radio" name="rabia" id="rabia" class="form-check-input-bg" 
-                                    onclick="return false;">
+                                    <input type="radio" name="esterilizado" id="esterilizado"
+                                        class="form-check-input-bg" onclick="return false;">
                                     <label class="form-check-label">SI</label>
-                                    <input type="radio" name="rabia" id="no-rabia" class="form-check-input-bg"
-                                    checked onclick="return false;">
+                                    <input type="radio" name="esterilizado" id="no-esterilizado"
+                                        class="form-check-input-bg" checked onclick="return false;">
                                     <label class="form-check-label">NO</label>
                                 </div>
-                            </td> </tr>
-                            <tr class="custom-control custom-radio custom-control-inline"> <td>Trivalente
+                            </td>
+                        </tr>
+                        <tr class="custom-control custom-radio custom-control-inline">
+                            <td>Desparasitado
                                 <div class="float-end">
-                                    <input type="radio" name="tri" id="tri" class="form-check-input-bg" 
-                                    onclick="return false;">
+                                    <input type="radio" name="desparasitado" id="desparasitado"
+                                        class="form-check-input-bg" onclick="return false;">
                                     <label class="form-check-label">SI</label>
-                                    <input type="radio" name="tri" id="no-tri" class="form-check-input-bg"
-                                    checked onclick="return false;">
+                                    <input type="radio" name="desparasitado" id="no-desparasitado"
+                                        class="form-check-input-bg" checked onclick="return false;">
                                     <label class="form-check-label">NO</label>
                                 </div>
-                            </td> </tr>
-                            <tr  class="custom-control custom-radio custom-control-inline"> <td>Leucemia felina
-                                <div class="float-end">
-                                    <input type="radio" name="leucemia" id="leucemia" class="form-check-input-bg" 
-                                    onclick="return false;">
-                                    <label class="form-check-label">SI</label>
-                                    <input type="radio" name="leucemia" id="no-leucemia" class="form-check-input-bg"
-                                    checked onclick="return false;">
-                                    <label class="form-check-label">NO</label>
-                                </div>
-                            </td> </tr>
+                            </td>
+                        </tr>
+                        <table class="table">
+                            <tr>
+                                <th>Vacunas</th>
+                            </tr>
+                            <tr class="custom-control custom-radio custom-control-inline">
+                                <td>Rabia
+                                    <div class="float-end">
+                                        <input type="radio" name="rabia" id="rabia" class="form-check-input-bg"
+                                            onclick="return false;">
+                                        <label class="form-check-label">SI</label>
+                                        <input type="radio" name="rabia" id="no-rabia" class="form-check-input-bg"
+                                            checked onclick="return false;">
+                                        <label class="form-check-label">NO</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="custom-control custom-radio custom-control-inline">
+                                <td>Trivalente
+                                    <div class="float-end">
+                                        <input type="radio" name="tri" id="tri" class="form-check-input-bg"
+                                            onclick="return false;">
+                                        <label class="form-check-label">SI</label>
+                                        <input type="radio" name="tri" id="no-tri" class="form-check-input-bg" checked
+                                            onclick="return false;">
+                                        <label class="form-check-label">NO</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="custom-control custom-radio custom-control-inline">
+                                <td>Leucemia felina
+                                    <div class="float-end">
+                                        <input type="radio" name="leucemia" id="leucemia" class="form-check-input-bg"
+                                            onclick="return false;">
+                                        <label class="form-check-label">SI</label>
+                                        <input type="radio" name="leucemia" id="no-leucemia" class="form-check-input-bg"
+                                            checked onclick="return false;">
+                                        <label class="form-check-label">NO</label>
+                                    </div>
+                                </td>
+                            </tr>
                         </table>
 
-                </tbody>
-              </table>
-          </div>
-          <div class="row align-items-center justify-content-md-center">
-              <div class="col-2 p-5">
-                <button class="btn btn-secondary">ADOPTAR</button>
-              </div>
-          </div>
-          
-        </div>
-      </div>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-2 pb-5 pt-5 text-center">
+                    <button type="button" class="btn btn-secondary" id="adoptar">ADOPTAR</button>
+                </div>
+            </div>
 
+        </div>
+    </div>
+
+    <!--FORMULARIO ADOPCION-->
+    <div class="oculto" id="formAdopcion">
+        <div class="row align-items-center">
+            <div class="col-10 col-lg-5 col-xl-6 p-3 m-3">
+                <h5>¿En qué consiste?</h5>
+                <p class="text-justify">Si adoptas a uno de nuestros gatos te lo entregaremos desparasitado tanto interna como externamente,
+                    y en algunos casos (cuando su edad lo permitan) con las vacunas correspondientes puestas y esterilizados. </p>
+                <p class="text-justify">Así mismo se entregará la cartilla del animal, y un informe veterinario
+                    donde se indican todos los tratamientos en el caso de que hayan sido necesarios desde su recogida y
+                    entrada en GATSHAN.</p>
+                
+                <h5>Artículos básicos</h5>
+                <p> Asegúrate de que tu nueva mascota tenga todos los elementos esenciales antes de llevarlo a casa.</p>
+                <ul class="p-2 m-3">
+                    <li>Cama para tu gato</li>
+                    <li>Tazones de comida y agua</li>
+                    <li>Caja de arena y arena</li>
+                    <li>Rascador</li>
+                    <li>Caja transportadora</li>
+                </ul>
+                <p class="text-justify">El proceso de adopción comienza en el momento en que se rellena el siguiente formulario:</p>
+            </div>
+            <div class="col-10 col-lg-6 col-xl-5 g-3 align-self-center p-2 m-3"> 
+                <form>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="inputNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="inputNombre">
+                        </div>
+                        <div class="col-6">
+                            <label for="inputApellido" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="inputApellido">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-5">
+                            <label for="inputDni" class="form-label">DNI</label>
+                            <input type="text" class="form-control" id="inputDni">
+                        </div>
+                        <div class="col-md-5">
+                            <label for="inputFechaNac" class="form-label">Fecha de nacimiento</label>
+                            <input type="date" class="form-control" id="inputFechaNac">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-5">
+                            <label for="inputDire" class="form-label">Direccion</label>
+                            <input type="text" class="form-control" id="inputDire" placeholder="San Martin 1234">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCiudad" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="inputCiudad" placeholder="Neuquén">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="inputCod" class="form-label">Codigo Postal</label>
+                            <input type="text" class="form-control" id="inputCod">
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-md-4">
+                            <label for="inputTel" class="form-label">Telefono</label>
+                            <input type="text" class="form-control" id="inputTel" placeholder="+542994875102">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCorreo" class="form-label">e-mail</label>
+                            <input type="text" class="form-control" id="inputCorreo" placeholder="usuario@ejemplo.com">
+                        </div>
+                    </div>
+                    
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-2 pb-3 pt-5 text-center">
+                            <button type="submit" class="btn btn-secondary">ENVIAR</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+
+        </div>
+
+    </div>
 
     <!--FOOTER-->
     <footer class="container-fluid mt-5" id="pie">
@@ -197,7 +319,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="index.js"></script>
 </body>
 
