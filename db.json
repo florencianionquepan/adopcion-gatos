@@ -1,28 +1,28 @@
 {   "destacado":[{
     "id":1,
     "nombre":"Nala",
-    "srcFoto":["img/nalad.jpg"]
+    "srcFoto":"img/nalad.jpg"
 },
 {
     "id":2,
     "nombre":"Pepe",
-    "srcFoto":["img/peped.jpg"]
+    "srcFoto":"img/peped.jpg"
 },
 {
     "id":3,
     "nombre":"Carlos",
-    "srcFoto":["img/carlosd.jpg"]
+    "srcFoto":"img/carlosd.jpg"
 
 },
 {
     "id":4,
     "nombre":"Felix",
-    "srcFoto":["img/felixd.jpg"]
+    "srcFoto":"img/felixd.jpg"
 },
 {
     "id":5,
     "nombre":"Sara",
-    "srcFoto":["img/sarad.jpg"]
+    "srcFoto":"img/sarad.jpg"
 }
 ],
     "gato":[
