@@ -89,4 +89,10 @@ $acceder.onclick=function(){
     document.querySelector('#div-acceder').className='container-md w-50 justify-content-center';
 }
 
-
+//ADOPTAR:
+const $adoptar=document.querySelector("#adoptar");
+$adoptar.onclick=function(){
+    const idGato=document.querySelector('#getId').textContent;
+    console.log(idGato);
+    document.querySelector("#formAdopcion").className="border rounded fondo m-3";
+}
