@@ -41,6 +41,7 @@ function crearOnClick(){
     const $listaBotones=document.querySelectorAll("#contenido button");
     $listaBotones.forEach((boton)=>{
         boton.onclick=function(){
+            window.location.href = '#arriba';
             verDetalles(boton.id);
     }
     });
