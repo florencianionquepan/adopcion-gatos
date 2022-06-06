@@ -183,7 +183,7 @@
     {
         "id":4,
         "nombre":"Felix",
-        "srcFoto":["img/felix-.jpg","img/feilx+.jpg","img/felixd.jpg"],
+        "srcFoto":["img/felix-.jpg","img/felix+.jpg","img/felixd.jpg"],
         "edad":"2 años",
         "sexo":"Macho",
         "descripcion":"Felix vivia con sus dueños mayores y luego de que fallecieron quedo solo. Le gusta mucho jugar con lana.",
