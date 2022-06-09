@@ -1,9 +1,14 @@
+const URL="https://my-json-server.typicode.com/florencianionquepan/adopcion-gatos/db";
+
 //MOSTRAR PAGINA PRINCIPAL
 function crearContenido(){
-    return fetch("https://my-json-server.typicode.com/florencianionquepan/adopcion-gatos/db")
+    return fetch(URL)
     .then(data=>data.json())
-    .then(data=>mostrarGatos(data.gato))
-    
+    .then(data=>{
+        mostrarGatos(data.gato);
+        mostrarDest(data.destacado);
+    })
+    .catch(error=>console.log(error))
 }
 
 function mostrarGatos(arrgatos){
@@ -25,7 +30,10 @@ function mostrarGatos(arrgatos){
         $boton.className="btn btn-secondary";
         $boton.innerHTML="Ver detalles »";
         $boton.id=dato.id;
-        $div.appendChild($img);
+        const $ancla=document.createElement('a');
+        $ancla.name=dato.nombre;
+        $div.appendChild($ancla);
+        $ancla.appendChild($img);
         $div.appendChild($tit);
         $div.appendChild($p);
         $div.appendChild($boton);
@@ -47,6 +55,108 @@ function crearOnClick(){
     });
 }
 
+function mostrarDest(arrDest){
+    const $destacados=document.querySelector("#destacados");
+    const $fila=document.querySelector('#destacados .row');
+    Object.values(arrDest).forEach((dest)=>{
+        const $divD=document.createElement('div');
+        $divD.className="col-3";
+        const $link=document.createElement('a');
+        $link.href=`#${dest.nombre}`;
+        const $imgD=document.createElement('img');
+        $imgD.src=dest.srcFoto;
+        $imgD.className='img-fluid rounded';
+        $link.appendChild($imgD);
+        $divD.appendChild($link);
+        $fila.appendChild($divD);
+    })
+    $destacados.appendChild($fila);
+    ocultarInicio();
+}
+
+function ocultarInicio(){
+    const $divImg=document.querySelectorAll("#destacados .col-3")
+    for (i=0;i<$divImg.length;i++){
+        if (i>2){
+            $divImg[i].className='oculto';
+        }
+    }
+    $divImg[2].setAttribute("id","centro");
+}
+
+//FUNCIONES PARA CARROUSEL
+
+function moverDer(){
+    let $visibles=document.querySelectorAll('#destacados .col-3');
+    let $ocultas=document.querySelectorAll('#destacados .oculto');
+    let $centro=document.querySelector('#centro');
+    if ($centro==$visibles[2]){
+        ocultar($visibles[0]);
+        mostrar($ocultas[0]);
+    } else if($centro==$visibles[1]){
+        ocultar($visibles[0]);
+        mostrar($ocultas[$ocultas.length-1]);
+    } else if($centro==$visibles[0]){
+        ocultar($visibles[0]);
+        mostrarAlFinal($ocultas[0]);
+    }else if($centro==$ocultas[$ocultas.length-1]){
+        ocultar($visibles[1]);
+        mostrarAlFinal($ocultas[0]);
+    }else if($centro==$ocultas[0]){
+        ocultar($visibles[$visibles.length-1]);
+        mostrarAlFinal($ocultas[0]);
+        removerOrden();
+    }
+}
+
+function ocultar($div){
+    $div.className='oculto';
+}
+
+function mostrar($div){
+    $div.className='col-3';
+}
+
+function mostrarAlFinal($div){
+    $div.className='col-3 order-1';
+}
+
+function removerOrden(){
+    document.querySelectorAll('#destacados .col-3').forEach((el)=>{
+        el.classList.remove('order-1');
+    })
+}
+
+document.querySelector('#prev').onclick=function(){
+    let $visibles=document.querySelectorAll('#destacados .col-3');
+    let $ocultas=document.querySelectorAll('#destacados .oculto');
+    let $centro=document.querySelector('#centro');
+    if ($centro==$visibles[2]){
+        ocultar($visibles[$visibles.length-1]);
+        mostrarAlFinal($visibles[0]);
+        mostrarAlFinal($visibles[1]);
+        mostrar($ocultas[$ocultas.length-1]);
+    }else if($centro==$ocultas[0]){
+        ocultar($visibles[1]);
+        mostrar($ocultas[$ocultas.length-1]);
+    }else if($centro==$ocultas[$ocultas.length-1]){
+        ocultar($visibles[0]);
+        mostrar($ocultas[$ocultas.length-1]);
+    }else if($centro==$visibles[0]){
+        ocultar($visibles[$visibles.length-1]);
+        mostrar($ocultas[$ocultas.length-1]);
+    }else if($centro==$visibles[1]){
+        ocultar($visibles[$visibles.length-1]);
+        mostrar($ocultas[0]);
+    }
+}
+    
+
+function mostrarAlInicio($div){
+    $div.className="col-3";
+}
+
+
 //BOTONES VER DETALLES
 function verDetalles(nro){
     document.querySelector('#destacados').className='oculto';
@@ -56,6 +166,7 @@ function verDetalles(nro){
     .then(response=>response.json())
     .then(gatodata=>{
         document.querySelector("#img").src=(gatodata.srcFoto)[1];
+        document.querySelector('#getId').innerHTML=nro;
         const $span=document.querySelectorAll("#detalles span");
         const $datos=[gatodata.nombre,gatodata.edad,gatodata.sexo,gatodata.raza,gatodata.color,gatodata.tipoPelo];
         for(let i=0;i<$span.length;i++){
@@ -70,6 +181,8 @@ function verDetalles(nro){
 .catch(error=>console.error("FALLO",error));
 
 }
+
+
 
 //IR A INICIO
 const $inicioVolver=document.querySelector("#inicio");
