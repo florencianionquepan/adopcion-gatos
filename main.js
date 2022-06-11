@@ -85,8 +85,7 @@ function ocultarInicio(){
 }
 
 //FUNCIONES PARA CARROUSEL
-
-document.querySelector('#next').onclick=function(){
+setInterval(document.querySelector('#next').onclick=function(){
     let $visibles=document.querySelectorAll('#destacados .col-3');
     let $ocultas=document.querySelectorAll('#destacados .oculto');
     let $centro=document.querySelector('#centro');
@@ -111,16 +110,19 @@ document.querySelector('#next').onclick=function(){
     setTimeout(function(){
         aclarar();
     },500);
-}
+},5000);
+
 
 function opacar(){
     document.querySelectorAll('#destacados .col-3').forEach((div)=>{
+        div.classList.remove('claro');
         div.classList.add('opaco');
     });
 }
 
 function aclarar(){
     document.querySelectorAll('#destacados .col-3').forEach((div)=>{
+        div.classList.add('claro');
         div.classList.remove('opaco');
     });
 }

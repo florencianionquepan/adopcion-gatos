@@ -45,6 +45,11 @@ background-color: #ffeef5;
 }
 
 .opaco{
-    opacity: 0;
-    transition: 250ms opacity ease-in-out;
+    opacity: 0.04;
+    transition: 400ms opacity ease;
+}
+
+.claro{
+    opacity: 1;
+    transition: 400ms opacity ease;
 }
