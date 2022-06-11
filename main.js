@@ -86,7 +86,7 @@ function ocultarInicio(){
 
 //FUNCIONES PARA CARROUSEL
 
-function moverDer(){
+document.querySelector('#next').onclick=function(){
     let $visibles=document.querySelectorAll('#destacados .col-3');
     let $ocultas=document.querySelectorAll('#destacados .oculto');
     let $centro=document.querySelector('#centro');
@@ -107,6 +107,22 @@ function moverDer(){
         mostrarAlFinal($ocultas[0]);
         removerOrden();
     }
+    opacar();
+    setTimeout(function(){
+        aclarar();
+    },500);
+}
+
+function opacar(){
+    document.querySelectorAll('#destacados .col-3').forEach((div)=>{
+        div.classList.add('opaco');
+    });
+}
+
+function aclarar(){
+    document.querySelectorAll('#destacados .col-3').forEach((div)=>{
+        div.classList.remove('opaco');
+    });
 }
 
 function ocultar($div){
@@ -121,6 +137,11 @@ function mostrarAlFinal($div){
     $div.className='col-3 order-1';
 }
 
+function transitionEnd(event){
+    event.target.classList.add('carrousel');
+    console.log("hola");
+}
+
 function removerOrden(){
     document.querySelectorAll('#destacados .col-3').forEach((el)=>{
         el.classList.remove('order-1');
@@ -131,6 +152,7 @@ document.querySelector('#prev').onclick=function(){
     let $visibles=document.querySelectorAll('#destacados .col-3');
     let $ocultas=document.querySelectorAll('#destacados .oculto');
     let $centro=document.querySelector('#centro');
+
     if ($centro==$visibles[2]){
         ocultar($visibles[$visibles.length-1]);
         mostrarAlFinal($visibles[0]);
@@ -149,11 +171,12 @@ document.querySelector('#prev').onclick=function(){
         ocultar($visibles[$visibles.length-1]);
         mostrar($ocultas[0]);
     }
-}
-    
 
-function mostrarAlInicio($div){
-    $div.className="col-3";
+    opacar();
+    setTimeout(function(){
+        aclarar();
+    },500);
+    
 }
 
 

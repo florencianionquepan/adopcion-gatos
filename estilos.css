@@ -43,3 +43,8 @@ background-color: #ffeef5;
     margin-bottom:2em;
 
 }
+
+.opaco{
+    opacity: 0;
+    transition: 250ms opacity ease-in-out;
+}
