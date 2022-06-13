@@ -76,3 +76,13 @@ function ocultarActividades(j){
 
 }
 
+/**
+ * MOSTRAR FORMULARIO
+ */
+
+const $botonesForm=document.querySelectorAll('#texto button');
+$botonesForm.forEach((b)=>{
+    b.onclick=function(){
+        document.querySelector('#formar-parte').className='container mt-3';
+    }
+})
