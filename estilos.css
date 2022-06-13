@@ -37,6 +37,10 @@ background-color: #ffeef5;
     border-bottom:1px solid #dee2e6;
 }
 
+footer svg{
+    color:rgb(38, 9, 75);
+}
+
 #form-acceder{
     padding:2em;
     margin-bottom:2em;
@@ -64,7 +68,7 @@ background-color: #ffeef5;
 .enfocado{
     background-color: rgb(232, 213, 255);
     transition: 500ms background-color;
-    color:#33094B;
+    color:rgb(38, 9, 75);
 }
 
 .muyClaro{
@@ -79,3 +83,4 @@ background-color: #ffeef5;
     margin-top:2%;
     margin-left: 40%;
 }
+
