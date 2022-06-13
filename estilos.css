@@ -35,14 +35,14 @@ background-color: #ffeef5;
     padding:1em;
     border-top:1px solid #dee2e6;
     border-bottom:1px solid #dee2e6;
-    
 }
 
 #form-acceder{
     padding:2em;
     margin-bottom:2em;
-
 }
+
+/*ESTILOS DE DESTACADOS CORREGIR NOMBRES!!!!*/
 
 .opaco{
     opacity: 0.04;
@@ -52,4 +52,30 @@ background-color: #ffeef5;
 .claro{
     opacity: 1;
     transition: 400ms opacity ease;
+}
+
+/*ESTILOS DE FORMAR-PARTE*/
+
+/* #actividades h3:hover{
+    background-color: rgb(232, 213, 255);
+    color:#33094B;
+} */
+
+.enfocado{
+    background-color: rgb(232, 213, 255);
+    transition: 500ms background-color;
+    color:#33094B;
+}
+
+.muyClaro{
+    opacity: 0;
+}
+.textoPrincipal{
+    opacity: 1;
+    transition: 500ms opacity ease-in;
+}
+
+#texto button{
+    margin-top:2%;
+    margin-left: 40%;
 }
