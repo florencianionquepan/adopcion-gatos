@@ -36,9 +36,9 @@
     </div>
 
 
-    <div class="border rounded fondo m-5 px-5">
+    <div class="border rounded fondo m-5 px-5 pt-3 pb-5">
         <div class="row mt-2">
-            <h2 class="pt-3 border-bottom border-secondary">Como ser parte de la comunidad</h2>
+            <h2 class="border-bottom border-secondary">Como ser parte de la comunidad</h2>
             <div class="col-3 pt-3 d-none d-lg-block">
                 <img class="img-fluid rounded"
                     src="https://i.pinimg.com/564x/7a/b3/cc/7ab3cc87077fcae8b0ba949732d41974.jpg">
@@ -77,9 +77,10 @@
                             <ul>
                                 <li>Ser mayor de 18 años</li>
                                 <li>Realizar una actividad una vez por semana como mínimo</li>
+                                <li>Vivir en Neuquén Capital o alrededores</li>
                             </ul>
                             <button type="button" class="btn btn-secondary">Llenar formulario</button>
-                           
+
                         </div>
                         <div>
                             <h4>Casa de acogida para la asociacion</h4>
@@ -88,15 +89,15 @@
                                 y cuando lo adopten se adaptará con mayor facilidad. </p>
 
                             <p>Seguramente sea una de las formas de colaborar más gratificante de todas.
-                                Puedes decidir si acoges un gato adulto o cachorro. según tu disponibilidad y
+                                Puedes decidir si acoges un gato adulto o cachorro, según tu disponibilidad y
                                 preferencia. </p>
                             <p>Deberás darle de comer, administrarle su medicación (en caso de que la requiera) y
                                 colmarlo de muchos, muchos mimos.</p>
                             <p>A menos que decidas lo contrario, los gastos de alimentación y veterinarios correrán a
-                                cargo de Gatshan.</p>
+                                cargo de Gatshan. Deberás vivir en Neuquén Capital o alrededores. </p>
                             <button type="button" class="btn btn-secondary">Llenar formulario</button>
                         </div>
-                        
+
                         <div>
                             <h4>Apadrina a uno de los gatitos</h4>
                             <p>Crea un vínculo sentimental con uno de nuestros protegidos y hazle sentir tu amor estés
@@ -137,15 +138,124 @@
 
         </div>
 
+    </div>
 
-        <div id="formar-parte" class="mt-5 border border-rounded">
+    <div id="formar-parte" class="container fondo border border-rounded p-5 mt-3 justify-content-center">
+        <div class="row align-items-center justify-content-center">
             <form>
+                <div class="row">
+                    <div class="col-6 col-xl-4">
+                        <label for="fpNombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="fpNombre">
+                    </div>
+                    <div class="col-6 col-xl-4">
+                        <label for="fpApellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="fpApellido">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-5 col-xl-4">
+                        <label for="fpDni" class="form-label">DNI</label>
+                        <input type="text" class="form-control" id="fpDni">
+                    </div>
+                    <div class="col-7 col-xl-4">
+                        <label for="fpFechaNac" class="form-label">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="fpFechaNac">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-md-4 col-xl-3 mt-3">
+                        <label for="fpDire" class="form-label">Direccion</label>
+                        <input type="text" class="form-control" id="fpDire" placeholder="San Martin 1234">
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-3 mt-3">
+                        <label for="fpCiudad" class="form-label">Ciudad</label>
+                        <input type="text" class="form-control" id="fpCiudad" placeholder="Neuquén">
+                    </div>
+                    <div class="col-6 col-md-4 col-xl-2 mt-3">
+                        <label for="fpCod" class="form-label">Codigo Postal</label>
+                        <input type="text" class="form-control" id="fpCod">
+                    </div>
+                </div>
 
+                <div class="row mt-3">
+                    <div class="col-6 col-xl-4">
+                        <label for="inputTel" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" id="inputTel" placeholder="+542994875102">
+                    </div>
+                    <div class="col-6 col-xl-4">
+                        <label for="inputCorreo" class="form-label">e-mail</label>
+                        <input type="text" class="form-control" id="inputCorreo" placeholder="usuario@ejemplo.com">
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-6 col-md-4 col-xl-2 mt-3">
+                        <p>Ocupación</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="ocupacion" id="estudio">
+                            <label class="form-check-label" for="estudio">
+                                Estudio
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="ocupacion" id="trabajo" checked>
+                            <label class="form-check-label" for="trabajo">
+                                Trabajo
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="ocupacion" id="ambas">
+                            <label class="form-check-label" for="ambas">
+                                Estudio y Trabajo
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 col-xl-6 mt-4">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="ocupacion"
+                                style="height: 100px"></textarea>
+                            <label for="ocupacion">Tanto si estudias como si trabajas, cuentanos en qué:</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-6 col-md-4 col-xl-2 align-self-center">
+                        <p>Posee Automovil</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="auto" id="movil">
+                            <label class="form-check-label" for="movil">
+                                SI
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="auto" id="noMovil" checked>
+                            <label class="form-check-label" for="noMovil">
+                                NO
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 col-xl-6">
+                        <p>Actividad que quiere desempeñar:</p>
+                        <select class="form-select" multiple aria-label="multiple select example">
+                            <option selected value="1">Voluntariado</option>
+                            <option value="2">Casa de Acogida</option>
+                            <option value="3">Apadrinar</option>
+                            <option value="4">Asociarse</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-2 pb-3 pt-5 text-center">
+                        <button type="button" class="btn btn-secondary">ENVIAR</button>
+                    </div>
+                </div>
             </form>
         </div>
 
     </div>
-
 
 
 
