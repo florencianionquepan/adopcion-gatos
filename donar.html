@@ -35,7 +35,197 @@
         </header>
     </div>
 
+    <!--DONAR-->
+    <div class="border rounded fondo m-5">
+        <div class="row p-4">
+            <h2 class="border-bottom border-secondary">Como donar</h2>
+            <div class="col-12 col-lg-6 p-3">
+                <h3>Aportacion económica</h3>
+                <p>La asociación no cuenta con ningún tipo de ayuda ni subvención por parte de ninguna institución.
+                    Siempre necesitamos ayuda económica para costear las facturas veterinarias,
+                    cubrir los gastos de alimentación e higiene, esterilizaciones y medicación de los gatos que tenemos
+                    a nuestro cargo.</p>
+                <p>Puedes hacer tu aportación mediante:
+                    Transferencia bancaria, en nuestra cuenta de
+                    Paypal: gatshanasociacion@gatshan.com</p>
+                <p>O puedes hacerlo mediante el siguiente formulario:</p>
+                <div class="">
+                    <form>
+                        <div class="row justify-content-center">
+                            <div class="col-8 pt-2">
+                                <label for="cantidad" class="form-label">¿Cuánto querés donar?</label>
+                                <input type="number" class="form-control" id="cantidad">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center text-center">
+                            <div class="col-12 pt-2">
+                                <div class="form-check form-check-inline">
+                                    <p>¿Con qué frecuencia?</p>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="frecuencia" id="mensual"
+                                        value="option1">
+                                    <label class="form-check-label" for="mensual">Mensual</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="frecuencia" id="unica"
+                                        value="option2">
+                                    <label class="form-check-label" for="unica">Unica vez</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-2">
+                            <h4 class="border-bottom border-secondary">Datos personales</h4>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="inputNombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="inputNombre">
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputApellido" class="form-label">Apellido</label>
+                                    <input type="text" class="form-control" id="inputApellido">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <label for="inputDni" class="form-label">DNI</label>
+                                    <input type="text" class="form-control" id="inputDni">
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputFechaNac" class="form-label">Fecha de nacimiento</label>
+                                    <input type="date" class="form-control" id="inputFechaNac">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-4 mt-1">
+                                    <label for="inputDire" class="form-label">Direccion</label>
+                                    <input type="text" class="form-control" id="inputDire"
+                                        placeholder="San Martin 1234">
+                                </div>
+                                <div class="col-4 mt-1">
+                                    <label for="inputCiudad" class="form-label">Ciudad</label>
+                                    <input type="text" class="form-control" id="inputCiudad" placeholder="Neuquén">
+                                </div>
+                                <div class="col-4 mt-1">
+                                    <label for="inputCod" class="form-label">Codigo Postal</label>
+                                    <input type="text" class="form-control" id="inputCod">
+                                </div>
+                            </div>
 
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <label for="inputTel" class="form-label">Telefono</label>
+                                    <input type="text" class="form-control" id="inputTel" placeholder="+542994875102">
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputCorreo" class="form-label">e-mail</label>
+                                    <input type="text" class="form-control" id="inputCorreo"
+                                        placeholder="usuario@ejemplo.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row my-4">
+                            <h4 class="border-bottom border-secondary">De donde se debita la donación</h4>
+                            <div class="col-md-7 py-2">
+                                <label for="t-numero" class="form-label">Número de tarjeta</label>
+                                <input type="password" class="form-control" id="t-numero"
+                                    placeholder="●●●● ●●●● ●●●● ●●●●" required="">
+                            </div>
+
+                            <div class="col-md-4 py-2">
+                                <label for="t-seg" class="form-label">Número de seguridad</label>
+                                <input type="password" class="form-control" id="t-seg" placeholder="●●●" required="">
+                            </div>
+
+                            <div class="col-md-4 py-2">
+                                <label for="expiracion" class="form-label">Fecha de expiracion</label>
+                                <input type="tel" class="form-control" id="expiracion" placeholder="MM / YYYY"
+                                    required="">
+                            </div>
+
+                            <div class="col-md-6 py-2">
+                                <label for="t-dni" class="form-label">DNI titular</label>
+                                <input type="text" class="form-control" id="t-dni">
+                            </div>
+
+                            <div class="col-md-8 py-2">
+                                <label for="tipo-t">Tipo de tarjeta</label>
+                                <select class="form-select" id="tipo-t">
+                                    <option selected>Selecciona el tipo de tarjeta</option>
+                                    <option value="amex">American Express</option>
+                                    <option value="argencard">Argencard</option>
+                                    <option value="cabal">Cabal</option>
+                                    <option value="debcabal">Cabal débito</option>
+                                    <option value="debmaster">Mastercard débito</option>
+                                    <option value="visa">Visa débito</option>
+                                    <option value="maestro">Maestro</option>
+                                    <option value="master">Mastercard</option>
+                                    <option value="visa">Visa</option>
+                                </select>
+                            </div>
+                            <div class="alert alert-secondary my-2" role="alert">
+                                El formulario que contiene esta página es seguro. Quiere decir que la información
+                                suministrada viaja de forma encriptada a través de la red. (SSL/TLS1.2)
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-shield-lock-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="row text-center my-2">
+                            <div class="col-12 align-self-center">
+                                <button type="button" class="btn btn-secondary">Donar a Gatshan</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-12 col-lg-6 p-3">
+                <h3>Puntos de recogida solidarios</h3>
+                <p>Un punto solidario es un comercio que colabora con Gatshan.
+                    Estos comercios durante su horario de atención tienen a su disposición uno de nuestros contenedores,
+                    allí recepcionaran cualquier donativo que quieras hacer para nuestros protegidos</p>
+                <p>Qué necesitan nuestros gatitos:</p>
+                <ul>
+                    <li>Alimento para gatos adultos, adultos con problemas digestivos.</li>
+                    <li>Latitas o sobres de comida húmeda</li>
+                    <li>Arena y piedritas para baño de gatos</li>
+                    <li>Guantes desechables, bolsas de residuos</li>
+                    <li>Mantas y frazadas</li>
+                    <li>Areneros, cuencos para alimentos y agua, etc. </li>
+                    <li>Medicaciones y productos de desparasitación ( interna y externa)</li>
+                    <li>Jaulas para transportarlos</li>
+
+                </ul>
+
+                <h4></h4>
+                <p>Tenemos varios puntos solidarios repartidos en varias partes de Neuquén,
+                    encuentra el más cercano en este mapa, nuestros protegidos han dejado su huella en él.</p>
+                <div class="text-center">
+                    <iframe class="px-2"
+                        src="https://www.google.com/maps/d/embed?mid=1OmwDy5ovnXAwn2QHb_CfPOlPzsLgWVo&ehbc=2E312F"
+                        width="500" height="250"></iframe>
+
+                    </iframe>
+                </div>
+
+                <h4 class="border-bottom border-secondary pt-5">Locales que aceptan donaciones</h4>
+                <div class="text-center my-3">
+                    <img class="img-fluid rounded " src="https://lh5.googleusercontent.com/p/AF1QipNDShObmftSsApaL1Axv4cC3YTzyD8IBFcQAqQN=s387-k-no"" 
+                    alt="Heladeria Costa Piré">
+                </div>
+                <div class="text-center my-3">
+                    <img class="img-fluid rounded" src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?output=thumbnail&cb_client=unknown_client.imagery_viewer.gps&panoid=IOiNgzkHCLA7PYsQMI2msA&w=588&h=290&thumb=2&yaw=15.874385&pitch=0"
+                    alt="La Pescadería del Neuquén">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--FOOTER-->
     <footer class="container-fluid mt-5" id="pie">
