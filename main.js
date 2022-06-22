@@ -228,6 +228,11 @@ $acceder.onclick=function(){
 const $adoptar=document.querySelector("#adoptar");
 $adoptar.onclick=function(){
     const idGato=document.querySelector('#getId').textContent;
-    console.log(idGato);
+    //console.log(idGato);
     document.querySelector("#formAdopcion").className="border rounded fondo m-3";
+}
+
+const $botonEnviar=document.querySelector('#formAdopcion button');
+$botonEnviar.onclick=function(){
+    validarAdopcion();
 }
