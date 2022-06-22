@@ -84,3 +84,7 @@ footer svg{
     margin-left: 40%;
 }
 
+/*ESTILOS FORMS*/
+.error{
+    border:1px solid red;
+}
