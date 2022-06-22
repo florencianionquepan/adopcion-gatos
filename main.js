@@ -106,24 +106,24 @@ setInterval(document.querySelector('#next').onclick=function(){
         mostrarAlFinal($ocultas[0]);
         removerOrden();
     }
-    opacar();
+    aclarar();
     setTimeout(function(){
-        aclarar();
+        opacar();
     },500);
 },5000);
 
 
-function opacar(){
+function aclarar(){
     document.querySelectorAll('#destacados .col-3').forEach((div)=>{
-        div.classList.remove('claro');
-        div.classList.add('opaco');
+        div.classList.remove('opaco');
+        div.classList.add('claro');
     });
 }
 
-function aclarar(){
+function opacar(){
     document.querySelectorAll('#destacados .col-3').forEach((div)=>{
-        div.classList.add('claro');
-        div.classList.remove('opaco');
+        div.classList.add('opaco');
+        div.classList.remove('claro');
     });
 }
 
@@ -137,11 +137,6 @@ function mostrar($div){
 
 function mostrarAlFinal($div){
     $div.className='col-3 order-1';
-}
-
-function transitionEnd(event){
-    event.target.classList.add('carrousel');
-    console.log("hola");
 }
 
 function removerOrden(){
@@ -174,9 +169,9 @@ document.querySelector('#prev').onclick=function(){
         mostrar($ocultas[0]);
     }
 
-    opacar();
+    aclarar();
     setTimeout(function(){
-        aclarar();
+        opacar();
     },500);
     
 }

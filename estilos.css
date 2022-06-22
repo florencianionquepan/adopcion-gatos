@@ -48,12 +48,12 @@ footer svg{
 
 /*ESTILOS DE DESTACADOS CORREGIR NOMBRES!!!!*/
 
-.opaco{
+.claro{
     opacity: 0.04;
     transition: 400ms opacity ease;
 }
 
-.claro{
+.opaco{
     opacity: 1;
     transition: 400ms opacity ease;
 }
