@@ -46,7 +46,7 @@ footer svg{
     margin-bottom:2em;
 }
 
-/*ESTILOS DE DESTACADOS CORREGIR NOMBRES!!!!*/
+/*ESTILOS DE DESTACADOS*/
 
 .claro{
     opacity: 0.04;
@@ -59,11 +59,6 @@ footer svg{
 }
 
 /*ESTILOS DE FORMAR-PARTE*/
-
-/* #actividades h3:hover{
-    background-color: rgb(232, 213, 255);
-    color:#33094B;
-} */
 
 .enfocado{
     background-color: rgb(232, 213, 255);
