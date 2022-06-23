@@ -109,6 +109,19 @@ function validarCod(cod){
     return mensaje;
 }
 
+function validarDescripcion(descripcion){
+    let mensaje='';
+    if (descripcion.length >=200){
+        mensaje="El campo descripcion es muy largo";
+    }else if (descripcion.length == 0){
+        mensaje='El campo descripcion no puede estar vacìo';
+    }else if (!/^[a-z,\. ]+$/i.test(descripcion)){
+        mensaje='El campo descripcion solo puede tener letras, puntos y comas';
+    }
+    return mensaje;
+}
+
+
 //validar formularios
 function validarFormulario($form){
 
