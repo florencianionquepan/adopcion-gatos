@@ -249,7 +249,7 @@ function validarAdopcion(){
         document.querySelector('#exito').className='text-center';
         setTimeout(function(){
             window.location.href = 'index.html';
-        },3000)
+        },1000)
     }
     
 }

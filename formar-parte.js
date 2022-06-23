@@ -94,11 +94,8 @@ $botonesForm.forEach((b)=>{
 function validarFormarParte(){
     const $formFormarParte=document.querySelector('#formar-parte form')
     const erroresFormarParte=validarFormulario($formFormarParte);
-    
     const descripcion=$formFormarParte.descripcion.value;
-    
     const errorDescripcion=validarDescripcion(descripcion);
-    
     //agrego clave descripcion y value errorDescripcion
     erroresFormarParte.descripcion=errorDescripcion;
     
@@ -109,7 +106,7 @@ function validarFormarParte(){
         document.querySelector('#exitoFP').className='text-center';
         setTimeout(function(){
             window.location.href = 'index.html';
-        },3000)
+        },1000)
     }
 }
 
