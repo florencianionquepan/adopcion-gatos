@@ -165,15 +165,19 @@ function validarFormulario($form){
 
 function manejarErrores(errores,$form){
     const keys=Object.keys(errores);
-    //const $errores=document.querySelector('#errores');
+    const $errores=document.querySelector('#errores');
     let cantidadErrores=0;
-    //borrarErroresAnteriores();
+    borrarErroresAnteriores();
 
     keys.forEach(function(key){
         const error=errores[key];
         if(error){
             cantidadErrores++;
             $form[key].classList.add('error');
+            const $error=document.createElement('li');
+            $error.innerText=error;
+            $error.className='existeError'
+            $errores.appendChild($error);
         }else{
             $form[key].classList.remove('error');
         }
@@ -182,11 +186,11 @@ function manejarErrores(errores,$form){
 
 }
 
-/* function borrarErroresAnteriores(){
+function borrarErroresAnteriores(){
     const $erroresAnteriores=document.querySelectorAll('.existeError');
     for(let i=0;i<$erroresAnteriores.length;i++){
         $erroresAnteriores[i].remove();
     }
-} */
+}
 
 
