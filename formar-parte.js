@@ -86,3 +86,33 @@ $botonesForm.forEach((b)=>{
         document.querySelector('#formar-parte').className='container mt-3';
     }
 })
+
+/**
+ * ENVIAR FORMULARIO
+ */
+
+function validarFormarParte(){
+    const $formFormarParte=document.querySelector('#formar-parte form')
+    const erroresFormarParte=validarFormulario($formFormarParte);
+    
+    const descripcion=$formFormarParte.descripcion.value;
+    
+    const errorDescripcion=validarDescripcion(descripcion);
+    
+    //agrego clave descripcion y value errorDescripcion
+    erroresFormarParte.descripcion=errorDescripcion;
+    
+    let cantErroresFP=manejarErrores(erroresFormarParte,$formFormarParte);
+
+    if(cantErroresFP===0){
+        document.querySelector('#formar-parte').className='oculto';
+        document.querySelector('#exitoFP').className='text-center';
+        setTimeout(function(){
+            window.location.href = 'index.html';
+        },3000)
+    }
+}
+
+document.querySelector('#formar-parte button').onclick=function(){
+    validarFormarParte();
+}
