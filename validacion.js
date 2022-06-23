@@ -2,11 +2,11 @@
 function validarNombre(nombre){
     let mensaje='';
     if(nombre.length===0){
-        mensaje='Este campo debe contener al menor un caracter';
+        mensaje='El campo nombre, apellido y ciudad no pueden estar vacíos';
     }else if(nombre.length>30){
-        mensaje='Este campo debe contener menos de 30 caracteres';
+        mensaje='El campo nombre, apellido y ciudad deben contener menos de 30 caracteres';
     }else if(!/^[a-z\u00C0-\u017F ]+$/i.test(nombre)){
-        mensaje='El campo solo acepta letras';
+        mensaje='El campo nombre, apellido y ciudad solo acepta letras y espacios';
     }
     return mensaje;
 }
@@ -14,11 +14,11 @@ function validarNombre(nombre){
 function validarDNI(dni){
     let mensaje='';
     if(dni.length<8){
-        mensaje='Este campo debe contener al menos 8 caracteres';
+        mensaje='El campo dni debe contener al menos 8 caracteres';
     }else if(dni.length>8){
-        mensaje='Este campo debe contener menos de 8 caracteres';
+        mensaje='El campo dni debe contener menos de 8 caracteres';
     }else if(!/^[0-9]+$/.test(dni)){
-        mensaje='El campo solo acepta numeros';
+        mensaje='El campo dni solo acepta numeros';
     }
     return mensaje;
 }
@@ -67,11 +67,11 @@ function validadFecha(fecha){
 function validarDireccion(dire){
     let mensaje='';
     if(dire.length===0){
-        mensaje='Este campo debe contener al menor un caracter';
+        mensaje='El campo dirección no puede estar vacío';
     }else if(dire.length>50){
-        mensaje='Este campo debe contener menos de 50 caracteres';
+        mensaje='El campo dirección debe contener menos de 50 caracteres';
     }else if(!/^[a-z\u00C0-\u017F 0-9]+$/i.test(dire)){
-        mensaje='El campo solo acepta letras y numeros';
+        mensaje='El campo dirección solo acepta letras y numeros';
     }
     return mensaje;
 }
@@ -79,11 +79,11 @@ function validarDireccion(dire){
 function validarTelefono(tel){
     let mensaje='';
     if(tel.length===0){
-        mensaje='Este campo debe contener al menos un caracter';
-    }else if(tel.length>15){
-        mensaje='Este campo debe contener menos de 15 caracteres';
+        mensaje='El campo teléfono no puede estar vacío';
+    }else if(tel.length>15 || tel.length<12){
+        mensaje='El campo teléfono debe contener entre 12 y 15 caracteres';
     }else if(!/^[+][0-9]+$/i.test(tel)){
-        mensaje='Este campo puede contener solo + y números';
+        mensaje='El campo teléfono debe contener solo el prefijo+ y números';
     }
     return mensaje;
 }
@@ -91,11 +91,11 @@ function validarTelefono(tel){
 function validarMail(mail){
     let mensaje='';
     if(mail.length===0){
-        mensaje='Este campo debe contener al menor un caracter';
+        mensaje='El campo e-mail no puede estar vacío';
     }else if(mail.length>50){
-        mensaje='Este campo debe contener menos de 50 caracteres';
+        mensaje='El campo e-mail debe contener menos de 50 caracteres';
     }else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*\.([a-z]{3})(\.[a-z]{2})*$/.test(mail)){
-        mensaje='Debe completar un mail valido';
+        mensaje='Debe completar un e-mail valido';
     }
     return mensaje;
 }
@@ -114,7 +114,7 @@ function validarDescripcion(descripcion){
     if (descripcion.length >=200){
         mensaje="El campo descripcion es muy largo";
     }else if (descripcion.length == 0){
-        mensaje='El campo descripcion no puede estar vacìo';
+        mensaje='El campo descripcion no puede estar vacío';
     }else if (!/^[a-z,\. ]+$/i.test(descripcion)){
         mensaje='El campo descripcion solo puede tener letras, puntos y comas';
     }
