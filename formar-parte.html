@@ -147,46 +147,49 @@
                     <div class="row">
                         <div class="col-md-6 mt-3">
                             <label for="fpNombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="fpNombre">
+                            <input type="text" class="form-control" name="nombre" id="fpNombre">
                         </div>
                         <div class="col-md-6 mt-3">
                             <label for="fpApellido" class="form-label">Apellido</label>
-                            <input type="text" class="form-control" id="fpApellido">
+                            <input type="text" class="form-control" name="apellido" id="fpApellido">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mt-3">
                             <label for="fpDni" class="form-label">DNI</label>
-                            <input type="text" class="form-control" id="fpDni">
+                            <input type="text" class="form-control" name="dni" id="fpDni">
                         </div>
                         <div class="col-md-5 mt-3">
                             <label for="fpFechaNac" class="form-label">Fecha de nacimiento</label>
-                            <input type="date" class="form-control" id="fpFechaNac">
+                            <input type="date" class="form-control" name="fecha" id="fpFechaNac">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 mt-3">
                             <label for="fpDire" class="form-label">Direccion</label>
-                            <input type="text" class="form-control" id="fpDire" placeholder="San Martin 1234">
+                            <input type="text" class="form-control" name="direccion" id="fpDire"
+                                placeholder="San Martin 1234">
                         </div>
                         <div class="col-md-4 mt-3">
                             <label for="fpCiudad" class="form-label">Ciudad</label>
-                            <input type="text" class="form-control" id="fpCiudad" placeholder="Neuquén">
+                            <input type="text" class="form-control" name="ciudad" id="fpCiudad" placeholder="Neuquén">
                         </div>
                         <div class="col-6 col-md-4 mt-3">
                             <label for="fpCod" class="form-label">Codigo Postal</label>
-                            <input type="text" class="form-control" id="fpCod">
+                            <input type="text" class="form-control" name="codigo" id="fpCod" placeholder="8300">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6 mt-3">
                             <label for="inputTel" class="form-label">Telefono</label>
-                            <input type="text" class="form-control" id="inputTel" placeholder="+542994875102">
+                            <input type="text" class="form-control" name="telefono" id="inputTel"
+                                placeholder="+542994875102">
                         </div>
                         <div class="col-md-6 mt-3">
                             <label for="inputCorreo" class="form-label">e-mail</label>
-                            <input type="text" class="form-control" id="inputCorreo" placeholder="usuario@ejemplo.com">
+                            <input type="text" class="form-control" name="mail" id="inputCorreo"
+                                placeholder="usuario@ejemplo.com">
                         </div>
                     </div>
 
@@ -214,9 +217,9 @@
                         </div>
                         <div class="col-12 col-md-8 mt-4">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="ocupacion"
+                                <textarea class="form-control" name="descripcion" id="descripcion"
                                     style="height: 100px"></textarea>
-                                <label for="ocupacion">Tanto si estudias como si trabajas, cuentanos en qué:</label>
+                                <label for="descripcion">Tanto si estudias como si trabajas, cuentanos en qué:</label>
                             </div>
                         </div>
                     </div>
@@ -239,7 +242,7 @@
                         </div>
                         <div class="col-12 col-md-8">
                             <p>Actividad que quiere desempeñar:</p>
-                            <select class="form-select" multiple aria-label="multiple select example">
+                            <select class="form-select" name="actividad" multiple aria-label="multiple select example">
                                 <option selected value="1">Voluntariado</option>
                                 <option value="2">Casa de Acogida</option>
                                 <option value="3">Apadrinar</option>
