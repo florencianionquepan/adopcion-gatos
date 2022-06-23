@@ -13,8 +13,8 @@ function validarNombre(nombre){
 
 function validarDNI(dni){
     let mensaje='';
-    if(dni.length===0){
-        mensaje='Este campo debe contener al menor un caracter';
+    if(dni.length<8){
+        mensaje='Este campo debe contener al menos 8 caracteres';
     }else if(dni.length>8){
         mensaje='Este campo debe contener menos de 8 caracteres';
     }else if(!/^[0-9]+$/.test(dni)){
