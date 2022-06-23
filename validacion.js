@@ -121,6 +121,51 @@ function validarDescripcion(descripcion){
     return mensaje;
 }
 
+function validarDinero(cantidad){
+    let mensaje='';
+    if(cantidad.length===0){
+        mensaje="El campo cantidad a donar no puede estar vacío";
+    }else if(cantidad.length>11){
+        mensaje="El campo cantidad a donar puede contener hasta 11 caracteres";
+    }else if(!/^[0-9]+$/.test(cantidad)){
+        mensaje="El campo cantidad a donar solo acepta números";
+    }
+    return mensaje;
+}
+
+//Falta validación en base al algoritmo de Luhn.
+function validarTarjeta(nroTarjeta){
+    let mensaje='';
+    if(!/^(4[0-9]{3}\s(([0-9]{4}\s){2}[0-9]{4}))/.test(nroTarjeta)){
+        mensaje="Numero de tarjeta no válido";
+    }
+    return mensaje;
+}
+
+function validarSeguridad(nroSeg){
+    let mensaje='';
+    if(!/^[0-9]{3}$/.test(nroSeg)){
+        mensaje="Codigo de seguridad no válido";
+    }
+    return mensaje;
+}
+
+function validarFechaExp(fechaExp){
+    let mensaje='';
+    const mes=parseInt(String(fechaExp).substring(0,2));
+    const anio=parseInt(String(fechaExp).substring(3,5));
+    const anioActual=parseInt(String(new Date().getFullYear()).substring(2,4));
+    const mesActual=parseInt(String(new Date().getMonth()))+1;
+
+    if(!/^\d{2}\/\d{2}$/.test(fechaExp)){
+        mensaje="El campo fecha de vencimiento contiene carácteres no válidos";
+    }else if(anio>anioActual+7 || anio<anioActual || mes>12 || mes<1){
+        mensaje="Fecha de expiración no válida";
+    }else if(anio==anioActual && mes<mesActual){
+        mensaje="Fecha de expiración no válida";
+    }
+    return mensaje;
+}
 
 //validar formularios
 function validarFormulario($form){
