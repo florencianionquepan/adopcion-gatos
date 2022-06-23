@@ -236,3 +236,20 @@ const $botonEnviar=document.querySelector('#formAdopcion button');
 $botonEnviar.onclick=function(){
     validarAdopcion();
 }
+
+// Validar Formulario de Adopcion:
+
+function validarAdopcion(){
+    const $formAdopcion=document.querySelector('#formAdopcion form');
+    const erroresAdopcion=validarFormulario($formAdopcion);
+
+    let cantErrores=manejarErrores(erroresAdopcion,$formAdopcion);
+    if(cantErrores===0){
+        document.querySelector('#formAdopcion').className='oculto';
+        document.querySelector('#exito').className='text-center';
+        setTimeout(function(){
+            window.location.href = 'index.html';
+        },3000)
+    }
+    
+}

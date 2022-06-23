@@ -161,26 +161,7 @@ function validarFormulario($form){
 
 }
 
-// Validar Formulario de Adopcion:
 
-function validarAdopcion(){
-    const $formAdopcion=document.querySelector('#formAdopcion form');
-    const erroresAdopcion=validarFormulario($formAdopcion);
-
-    let cantErrores=manejarErrores(erroresAdopcion,$formAdopcion);
-    if(cantErrores===0){
-        document.querySelector('#formAdopcion').className='oculto';
-        setInterval(document.querySelector('#exito').className='text-center',3000);
-        setTimeout(function(){
-            document.querySelector('#detalles').className='oculto';
-            document.querySelector('#destacados').className='text-center m-5';
-            document.querySelector('#contenido').className='text-center border rounded fondo m-5';
-            window.location.href = '#arriba';
-            document.querySelector('#exito').className='oculto';
-        },3000)
-    }
-    
-}
 
 function manejarErrores(errores,$form){
     const keys=Object.keys(errores);
