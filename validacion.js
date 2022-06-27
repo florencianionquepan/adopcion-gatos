@@ -221,7 +221,7 @@ function manejarErrores(errores,$form){
             $form[key].classList.add('error');
             const $error=document.createElement('li');
             $error.innerText=error;
-            $error.className='existeError'
+            $error.className='existeError';
             $errores.appendChild($error);
         }else{
             $form[key].classList.remove('error');
