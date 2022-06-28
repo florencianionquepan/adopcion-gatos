@@ -55,7 +55,7 @@ function validarFormatoFecha(fecha) {
 
 function validadFecha(fecha){
     let mensaje='';
-    if (!validarFormatoFecha(fecha)){
+    if (!validarFormatoFecha(fecha) || calcularEdad(fecha)>100){
         mensaje="Debe introducir una fecha valida";
     }else if(calcularEdad(fecha)<18){
         mensaje="Debe ser mayor de edad para completar el formulario";
