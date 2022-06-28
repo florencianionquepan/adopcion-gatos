@@ -45,12 +45,47 @@ function calcularEdad(date){
     return edad;
 }
 
-function validarFormatoFecha(fecha) {
-    if (/^\d{2,4}\-\d{1,2}\-\d{1,2}$/.test(fecha) && (fecha!='')) {
-          return true;
-    } else {
-          return false;
+function esBisiesto(fecha){
+    const anio=parseInt(String(fecha).substring(0,4));
+    return (((anio % 4 == 0) && (anio % 100 != 0)) || (anio % 400 == 0));
+}
+
+//aca valido fechas en año bisiesto, que no sea 31 de junio, etc--
+function validarFecha(fecha){
+    let res=true;
+    let dmax;
+    const mes=parseInt(String(fecha).substring(5,7));
+    const dia=parseInt(String(fecha).substring(8,10));
+
+    switch(mes){
+        case 1:dmax=31;break;
+        case 2: if(esBisiesto(fecha)){dmax=29;}else{dmax=28;};break;
+        case 3: dmax=31;break;
+        case 4: dmax=30;break;
+        case 5: dmax=31;break;
+        case 6: dmax=30;break;
+        case 7: dmax=31;break;
+        case 8: dmax=31;break;
+        case 9: dmax=30;break;
+        case 10:dmax=31;break;
+        case 11:dmax=30;break; 
+        case 12:dmax=31;break;
     }
+    if(dia>dmax){
+        res=false;
+    }
+    return res;
+}
+
+//validar fechas
+function validarFormatoFecha(fecha) {
+    let resultado;
+    if (/^\d{2,4}\-\d{1,2}\-\d{1,2}$/.test(fecha) && (fecha!='') && validarFecha(fecha)){
+        resultado=true;
+    }else {
+        resultado=false;
+    }
+    return resultado;
 }
 
 function validadFecha(fecha){
