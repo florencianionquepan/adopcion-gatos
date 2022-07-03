@@ -170,9 +170,18 @@ function validarDinero(cantidad){
 
 //Falta validación en base al algoritmo de Luhn.
 function validarTarjeta(nroTarjeta){
-    let mensaje='';
-    if(!/^(4[0-9]{3}\s(([0-9]{4}\s){2}[0-9]{4}))/.test(nroTarjeta)){
-        mensaje="Numero de tarjeta no válido";
+    let mensaje='Numero de tarjeta no válido';
+    //visa
+    if(/^(4[0-9]{3}\s(([0-9]{4}\s){2}[0-9]{4}))/.test(nroTarjeta)){
+        mensaje="";
+    }else if(/^4[0-9]{3} ?[0-9]{4} ?[0-9]{4} ?[0-9]{4}$/.test(nroTarjeta)){
+        mensaje="";
+        //master
+    }else if(/^5[1-5][0-9]{2} ?[0-9]{4} ?[0-9]{4} ?[0-9]{4}$/.test(nroTarjeta)){
+        mensaje="";
+        //amex
+    }else if(/^3[47][0-9-]{16}$/.test(nroTarjeta)){
+        mensaje="";
     }
     return mensaje;
 }
@@ -272,5 +281,3 @@ function borrarErroresAnteriores(){
         $erroresAnteriores[i].remove();
     }
 }
-
-
