@@ -39,7 +39,7 @@
         "esterilizacion":false,
         "desparasitacion":true,
         "vacunas":[false,false,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":14,
