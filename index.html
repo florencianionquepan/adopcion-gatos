@@ -55,7 +55,7 @@
     <!--DETALLES DE UN GATITO-->
     <div class="oculto" id="detalles">
         <div class="row align-items-center justify-content-center">
-            <div class="col-12 col-md-8 col-lg-6 pt-3 pl-5"><img class="img-fluid rounded mx-auto d-block" id="img">
+            <div class="col-12 col-md-8 col-lg-6 pt-3 pl-5"><img class="img-fluid rounded mx-auto d-block">
             </div>
             <div class="col-12 col-md-4 col-lg-3 pt-3">
                 <table class="table table-borderless text-center">
@@ -73,6 +73,11 @@
                     <tr>
                         <td>
                             <h5>Sexo: <span id="sexo"></span></h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5></h5>
                         </td>
                     </tr>
                 </table>
@@ -99,7 +104,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-12 col-md-5 g-5">
+            <div class="col-12 col-md-5 g-5" id="ficha">
                 <table class="table">
                     <thead>
                         <tr>
@@ -110,27 +115,28 @@
                         <tr class="custom-control custom-radio custom-control-inline">
                             <td>Esterilizado
                                 <div class="float-end">
-                                    <input type="radio" name="esterilizado" id="esterilizado"
-                                        class="form-check-input-bg" onclick="return false;">
-                                    <label class="form-check-label">SI</label>
-                                    <input type="radio" name="esterilizado" id="no-esterilizado"
-                                        class="form-check-input-bg" checked onclick="return false;">
-                                    <label class="form-check-label">NO</label>
+                                    <div class="oculto">
+                                        ✔
+                                    </div>
+                                    <div class="oculto">
+                                        ✖
+                                    </div>
                                 </div>
                             </td>
                         </tr>
-                        <tr class="custom-control custom-radio custom-control-inline">
-                            <td>Desparasitado
-                                <div class="float-end">
-                                    <input type="radio" name="desparasitado" id="desparasitado"
-                                        class="form-check-input-bg" onclick="return false;">
-                                    <label class="form-check-label">SI</label>
-                                    <input type="radio" name="desparasitado" id="no-desparasitado"
-                                        class="form-check-input-bg" checked onclick="return false;">
-                                    <label class="form-check-label">NO</label>
+
+                        <td>Desparasitado
+                            <div class="float-end">
+                                <div class="oculto">
+                                    ✔
                                 </div>
-                            </td>
-                        </tr>
+
+                                <div class="oculto">
+                                    ✖
+                                </div>
+                            </div>
+                        </td>
+
                         <table class="table">
                             <tr>
                                 <th>Vacunas</th>
@@ -138,36 +144,37 @@
                             <tr class="custom-control custom-radio custom-control-inline">
                                 <td>Rabia
                                     <div class="float-end">
-                                        <input type="radio" name="rabia" id="rabia" class="form-check-input-bg"
-                                            onclick="return false;">
-                                        <label class="form-check-label">SI</label>
-                                        <input type="radio" name="rabia" id="no-rabia" class="form-check-input-bg"
-                                            checked onclick="return false;">
-                                        <label class="form-check-label">NO</label>
+                                        <div class="oculto">
+                                            ✔
+                                        </div>
+
+                                        <div class="oculto">
+                                            ✖
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="custom-control custom-radio custom-control-inline">
                                 <td>Trivalente
                                     <div class="float-end">
-                                        <input type="radio" name="tri" id="tri" class="form-check-input-bg"
-                                            onclick="return false;">
-                                        <label class="form-check-label">SI</label>
-                                        <input type="radio" name="tri" id="no-tri" class="form-check-input-bg" checked
-                                            onclick="return false;">
-                                        <label class="form-check-label">NO</label>
+                                        <div class="oculto">
+                                            ✔
+                                        </div>
+                                        <div class="oculto">
+                                            ✖
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="custom-control custom-radio custom-control-inline">
                                 <td>Leucemia felina
                                     <div class="float-end">
-                                        <input type="radio" name="leucemia" id="leucemia" class="form-check-input-bg"
-                                            onclick="return false;">
-                                        <label class="form-check-label">SI</label>
-                                        <input type="radio" name="leucemia" id="no-leucemia" class="form-check-input-bg"
-                                            checked onclick="return false;">
-                                        <label class="form-check-label">NO</label>
+                                        <div class="oculto">
+                                            ✔
+                                        </div>
+                                        <div class="oculto">
+                                            ✖
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
@@ -197,7 +204,7 @@
                 <p class="text-justify">Así mismo se entregará la cartilla del animal, y un informe veterinario
                     donde se indican todos los tratamientos en el caso de que hayan sido necesarios desde su recogida y
                     entrada en GATSHAN.</p>
-                
+
                 <p>La persona que rellene el formulario debe ser mayor de edad.</p>
 
                 <h5>Artículos básicos</h5>
@@ -231,17 +238,20 @@
                         </div>
                         <div class="col-6">
                             <label for="inputFechaNac" class="form-label">Fecha de nacimiento</label>
-                            <input type="date" min="1932-06-22" max="2004-06-22" class="form-control" name="fecha" id="inputFechaNac">
+                            <input type="date" min="1932-06-22" max="2004-06-22" class="form-control" name="fecha"
+                                id="inputFechaNac">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-sm-5 mt-1">
                             <label for="inputDire" class="form-label">Direccion</label>
-                            <input type="text" class="form-control" name="direccion" id="inputDire" placeholder="San Martin 1234">
+                            <input type="text" class="form-control" name="direccion" id="inputDire"
+                                placeholder="San Martin 1234">
                         </div>
                         <div class="col-sm-4 mt-1">
                             <label for="inputCiudad" class="form-label">Ciudad</label>
-                            <input type="text" class="form-control" name="ciudad" id="inputCiudad" placeholder="Neuquén">
+                            <input type="text" class="form-control" name="ciudad" id="inputCiudad"
+                                placeholder="Neuquén">
                         </div>
                         <div class="col-sm-3 mt-1">
                             <label for="inputCod" class="form-label">Codigo Postal</label>
@@ -252,11 +262,13 @@
                     <div class="row mt-3">
                         <div class="col-sm-4">
                             <label for="inputTel" class="form-label">Telefono</label>
-                            <input type="text" class="form-control" name="telefono" id="inputTel" placeholder="+542994875102">
+                            <input type="text" class="form-control" name="telefono" id="inputTel"
+                                placeholder="+542994875102">
                         </div>
                         <div class="col-sm-4">
                             <label for="inputCorreo" class="form-label">e-mail</label>
-                            <input type="text" class="form-control" name="mail" id="inputCorreo" placeholder="usuario@ejemplo.com">
+                            <input type="text" class="form-control" name="mail" id="inputCorreo"
+                                placeholder="usuario@ejemplo.com">
                         </div>
                     </div>
 
@@ -279,9 +291,11 @@
 
     <div class="oculto" id="exito">
         <h2>¡Tu solicitud está en camino!</h2>
-        <img class="img-fluid rounded" src="https://i.pinimg.com/originals/a5/ca/9d/a5ca9d2b98c5b37209626cde2f3583c8.gif">
+        <img class="img-fluid rounded"
+            src="https://i.pinimg.com/originals/a5/ca/9d/a5ca9d2b98c5b37209626cde2f3583c8.gif">
         <h3>Muy pronto nos pondremos en contacto</h3>
     </div>
+
 
     <!--FOOTER-->
     <footer class="container-fluid mt-5" id="pie">
