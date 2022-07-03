@@ -33,3 +33,33 @@ function validarDonacion(){
 document.querySelector('#form-donar button').onclick=function(){
     validarDonacion();
 }
+
+/**
+ * CONOCER TIPO DE TARJETA EN EL PRIMER KEYPRESS
+ */
+const $inputTarjeta=document.querySelector('#t-numero');
+const $tipoTarjeta=document.querySelector('#tipo-t');
+
+$inputTarjeta.onkeydown=function(event){
+    const valor=$inputTarjeta.value;
+    if (valor.length==0){
+        if (event.key==4){
+            $tipoTarjeta.value='visa';
+            mostrarTarjeta('visa');
+        }else if(event.key==5){
+            $tipoTarjeta.value='master';
+            mostrarTarjeta('master');
+        }else if(event.key==3){
+            $tipoTarjeta.value='amex';
+            mostrarTarjeta('amex');
+        }
+    }
+}
+
+function  mostrarTarjeta(tipo){
+    document.querySelectorAll('#dibujo img').forEach(d=>{
+        d.classList.add('oculto');
+    })
+    document.querySelector(`#${tipo}`).classList.remove('oculto');
+    document.querySelector(`#${tipo}`).classList.add('pt-4');
+}
