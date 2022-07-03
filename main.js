@@ -1,5 +1,7 @@
 const URL="https://my-json-server.typicode.com/florencianionquepan/adopcion-gatos/db";
 
+const solicitantes=[];
+
 //MOSTRAR PAGINA PRINCIPAL
 function crearContenido(){
     return fetch(URL)
@@ -18,9 +20,11 @@ function mostrarGatos(arrgatos){
     Object.values(arrgatos).forEach((dato)=>{
         const $div=document.createElement('div');
         $div.className="col-lg-4 my-3";
+        $div.id=`div-${dato.id}`;
         const $img=document.createElement('img');
         $img.className="rounded";
         $img.src=dato.srcFoto[0];
+        $img.id='img-'+dato.id;
         const $tit=document.createElement('h2');
         $tit.className="fw-normal";
         $tit.innerHTML=dato.nombre;
@@ -31,6 +35,14 @@ function mostrarGatos(arrgatos){
         $boton.innerHTML="Ver detalles »";
         $boton.id=dato.id;
         const $ancla=document.createElement('a');
+        const $divTxt=document.createElement('div');
+        $divTxt.className='txt-encima';
+        const $h4=document.createElement('h4');
+        $h4.id='h4-'+dato.id;
+        $h4.style.color='rgb(38, 9, 75)';
+        $h4.className='solicitud';
+        $divTxt.appendChild($h4);
+        $div.appendChild($divTxt);
         $ancla.name=dato.nombre;
         $div.appendChild($ancla);
         $ancla.appendChild($img);
@@ -38,6 +50,7 @@ function mostrarGatos(arrgatos){
         $div.appendChild($p);
         $div.appendChild($boton);
         $fila.appendChild($div);
+        solicitantes.push(dato.solicitantes);
     })
     $contenido.appendChild($fila);
     crearOnClick();
@@ -185,17 +198,32 @@ function verDetalles(nro){
     fetch(`https://my-json-server.typicode.com/florencianionquepan/adopcion-gatos/gato/${nro}`)
     .then(response=>response.json())
     .then(gatodata=>{
-        document.querySelector("#img").src=(gatodata.srcFoto)[1];
+        document.querySelector("#detalles img").src=(gatodata.srcFoto)[1];
         document.querySelector('#getId').innerHTML=nro;
+        //CARACTERISTICAS
         const $span=document.querySelectorAll("#detalles span");
         const $datos=[gatodata.nombre,gatodata.edad,gatodata.sexo,gatodata.raza,gatodata.color,gatodata.tipoPelo];
         for(let i=0;i<$span.length;i++){
             $span[i].innerHTML=$datos[i];
         }
-        const $input=document.querySelectorAll("#detalles input");
+        //FICHA VETERINARIA
+        fichaDiv=[];
+        const $float=document.querySelectorAll('#ficha .float-end');
+        $float.forEach((div)=>{
+            fichaDiv.push(div.children[0]);
+            fichaDiv.push(div.children[1]);
+        })
+        fichaDiv.forEach((e)=>{
+            e.classList.add('oculto');
+        })
+        
         const $ficha=[gatodata.esterilizacion,gatodata.desparasitacion,(gatodata.vacunas)[0],(gatodata.vacunas)[1],(gatodata.vacunas)[2]];
-        for (let i=0;i<$input.length;i=i+2){
-            $input[i].checked=$ficha[i/2];
+        for (let i=0;i<fichaDiv.length;i=i+2){
+            if($ficha[i/2]){
+                fichaDiv[i].className='';
+            }else{
+                fichaDiv[i+1].className='';
+            }
         }
 })
 .catch(error=>console.error("FALLO",error));
@@ -208,13 +236,13 @@ function verDetalles(nro){
 const $inicioVolver=document.querySelector("#inicio");
 
 $inicioVolver.onclick=function(){
-    document.querySelector('#div-acceder').className='oculto';
+    //document.querySelector('#div-acceder').className='oculto';
     document.querySelector('#detalles').className='oculto';
     document.querySelector('#destacados').className='border rounded fondo m-1';
     document.querySelector('#contenido').className='text-center border rounded fondo m-5';
 }
 
-//BOTON ACCEDER
+/* //BOTON ACCEDER
 const $acceder=document.querySelector('#acceder');
 
 $acceder.onclick=function(){
@@ -222,13 +250,11 @@ $acceder.onclick=function(){
     document.querySelector('#contenido').className='oculto';
     document.querySelector('#detalles').className='oculto';
     document.querySelector('#div-acceder').className='container-md w-50 justify-content-center';
-}
+} */
 
 //ADOPTAR:
 const $adoptar=document.querySelector("#adoptar");
 $adoptar.onclick=function(){
-    const idGato=document.querySelector('#getId').textContent;
-    //console.log(idGato);
     document.querySelector("#formAdopcion").className="border rounded fondo m-3";
 }
 
@@ -242,14 +268,103 @@ $botonEnviar.onclick=function(){
 function validarAdopcion(){
     const $formAdopcion=document.querySelector('#formAdopcion form');
     const erroresAdopcion=validarFormulario($formAdopcion);
-
+    const idGato=document.querySelector('#getId').textContent;
     let cantErrores=manejarErrores(erroresAdopcion,$formAdopcion);
+    const nombre=$formAdopcion.nombre.value;
     if(cantErrores===0){
+        document.querySelector("#detalles").className='oculto';
         document.querySelector('#formAdopcion').className='oculto';
         document.querySelector('#exito').className='text-center';
+        limpiarFormulario();
+        informarSolicitud(idGato,nombre);
         setTimeout(function(){
-            window.location.href = 'index.html';
-        },1000)
+            document.querySelector('#exito').className='oculto';
+            window.location.href = '#arriba';
+            document.querySelector('#destacados').className='text-center m-5';
+            document.querySelector('#contenido').className='text-center border rounded fondo m-5';
+        },1000);
     }
-    
+}
+
+function limpiarFormulario(){
+    const $form=document.querySelectorAll('#formAdopcion input');
+    $form.forEach(function(input){
+        input.value='';
+    })
+}
+
+function informarSolicitud(id,nombre){
+    //aviso en el contenido principal
+    solicitantes[id-1].push(nombre);
+    const cantSolic=solicitantes[id-1].length;
+
+    document.querySelector(`#img-${id}`).className='rounded img-opaca';
+    document.querySelector(`#h4-${id}`).innerText="Solicitudes: "+cantSolic;
+
+    //CREO EL BOTON PARA VER SOLICITANTES:
+    const $boton=document.createElement('button');
+    $boton.className='btn btn-secondary position-absolute top-0 end-0 translate-middle-x';
+    $boton.innerText='💜';
+    const $divCont=document.querySelector(`#div-${id} .txt-encima`);
+    $divCont.appendChild($boton);
+    $boton.id=`abrir-sol-${id}`;
+
+    //CREO EL DIV SOLICITANTE DE CADA GATO Y LO MANTENGO OCULTO
+    crearDivSol(id);
+
+    $boton.onclick=function(){
+        verSolicitantes(id);
+    }
+}
+
+function crearDivSol(id){
+    const $div=document.createElement('div');
+    $div.id=`sol-${id}`;
+    $div.className='solicitantes';
+
+    const $h3=document.createElement('h3');
+    $h3.innerHTML='Solicitantes:';
+    $div.appendChild($h3);
+
+    const $h4=document.createElement('h4');
+    $div.appendChild($h4);
+
+    const $botonCerrar=document.createElement('button');
+    $botonCerrar.className='btn btn-outline-secondary';
+    $botonCerrar.innerText='Cerrar';
+    $div.appendChild($botonCerrar);
+    $botonCerrar.onclick=function(){
+        cerrarSol(id);
+    }
+
+    const $divCont=document.querySelector(`#div-${id}`);
+    $divCont.appendChild($div);
+    $div.classList.add('oculto');
+}
+
+function verSolicitantes(id){
+    document.querySelector(`#abrir-sol-${id}`).classList.add('oculto');
+
+    const $divCont=document.querySelector(`#div-${id}`);
+    $divCont.style.position='relative';
+
+    let str='';
+    const nombres=solicitantes[id-1];
+    for(i=0;i<nombres.length;i++){
+        str=str+nombres[i]+'<br>';
+    }
+      
+    const $h4=document.querySelector(`#sol-${id} h4`);
+    $h4.innerHTML=str;
+
+    const $botonCerrar=document.querySelector(`#sol-${id} button`);
+    $botonCerrar.onclick=function(){
+        cerrarSol(id);
+    }
+    document.querySelector(`#sol-${id}`).classList.remove('oculto');
+}
+
+function cerrarSol(id){
+    document.querySelector(`#abrir-sol-${id}`).classList.remove('oculto');
+    document.querySelector(`#sol-${id}`).classList.add('oculto');
 }
