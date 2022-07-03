@@ -54,7 +54,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":13,
@@ -69,7 +69,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":12,
@@ -84,7 +84,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":11,
@@ -99,7 +99,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[false,false,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":10,
@@ -114,7 +114,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":9,
@@ -129,7 +129,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":8,
@@ -144,7 +144,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":7,
@@ -159,7 +159,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":6,
@@ -174,7 +174,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":5,
@@ -189,7 +189,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":4,
@@ -204,7 +204,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":3,
@@ -219,7 +219,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":2,
@@ -234,7 +234,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     },
     {
         "id":1,
@@ -249,7 +249,7 @@
         "esterilizacion":true,
         "desparasitacion":true,
         "vacunas":[true,true,false],
-        "solicitudes":0
+        "solicitantes":[]
     }
 ]
 }
