@@ -10,6 +10,12 @@ function irInicio(){
     ocultarAcceder();
     principalVer();
     document.querySelector('#detalles').className='oculto';
+    //Además de ocultar cualquier div que pueda estar mostrado, limpia formularios:
+    limpiarFormFP();
+    limpiarFormD();
+    limpiarFormAcceder();
+    limpiarFormAdoptar();
+    window.scrollTo(0,0);
 }
 
 function ocultarPrincipal(){
@@ -36,7 +42,12 @@ $botonAsociacion.onclick=function(){
     ocultarDetalles();
     ocultarFP();
     ocultarDonar();
+    ocultarAcceder();
     document.querySelector('#acerca-de').classList.remove('oculto');
+    limpiarFormFP();
+    limpiarFormD();
+    limpiarFormAcceder();
+    limpiarFormAdoptar();
 }
 
 function ocultarAsociacion(){
@@ -47,12 +58,20 @@ function ocultarAsociacion(){
  * FORMAR-PARTE
  */
 $botonFP.onclick=function(){
+    irFormarParte();
+}
+
+function irFormarParte(){
     ocultarPrincipal();
     ocultarDetalles();
     ocultarAsociacion();
     ocultarDonar();
     ocultarAcceder();
     document.querySelector('#FP').classList.remove('oculto');
+    limpiarFormFP();
+    limpiarFormD();
+    limpiarFormAcceder();
+    limpiarFormAdoptar();
 }
 
 function ocultarFP(){
@@ -71,10 +90,15 @@ $botonDonar.onclick=function(){
     ocultarFP();
     ocultarAcceder();
     document.querySelector('#donar').classList.remove('oculto');
+    limpiarFormFP();
+    limpiarFormD();
+    limpiarFormAcceder();
+    limpiarFormAdoptar();
 }
 
 function ocultarDonar(){
     document.querySelector('#donar').classList.add('oculto');
+    document.querySelector('#formAdopcion').classList.add('oculto');
 }
 
 /**
@@ -88,6 +112,10 @@ $botonAcceder.onclick=function(){
     ocultarFP();
     ocultarDonar();
     document.querySelector('#div-acceder').classList.remove('oculto');
+    limpiarFormFP();
+    limpiarFormD();
+    limpiarFormAcceder();
+    limpiarFormAdoptar();
 }
 
 function ocultarAcceder(){
@@ -101,5 +129,4 @@ function ocultarAcceder(){
 
 document.querySelector('#volver-inicio').onclick=function(){
     irInicio();
-    window.location.href = '#arriba';
 }
