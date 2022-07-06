@@ -1,4 +1,5 @@
 const $formDonar=document.querySelector('#form-donar form');
+const $ulErroresD=document.querySelector('#form-donar ul');
 
 function validarDonacion(){
     const erroresDonacion=validarFormulario($formDonar);
@@ -21,11 +22,12 @@ function validarDonacion(){
     erroresDonacion.fechaExp=errorFechaExp;
     erroresDonacion.dniTarjeta=errorDniTarjeta;
 
-    let cantidadErrores=manejarErrores(erroresDonacion,$formDonar);
+    let cantidadErrores=manejarErrores(erroresDonacion,$formDonar,$ulErroresD);
     if(cantidadErrores===0){
         document.querySelector('#exitoDonacion').className='text-center';
         setTimeout(function(){
-            window.location.href = 'index.html';
+            irInicio();
+            document.querySelector('#exitoDonacion').className='oculto';
         },1000)
     }
 }
@@ -62,4 +64,12 @@ function  mostrarTarjeta(tipo){
     })
     document.querySelector(`#${tipo}`).classList.remove('oculto');
     document.querySelector(`#${tipo}`).classList.add('pt-4');
+}
+
+function limpiarFormD(){
+    document.querySelectorAll('#form-donar form input').forEach((input)=>{
+        input.value="";
+        input.classList.remove('error');
+    })
+    borrarErroresAnterioresFPD();
 }

@@ -43,7 +43,7 @@ function validarInicioSesion(){
     }
 
     const inputs=Object.keys(errores);
-    const $errores=document.querySelector('#errores');
+    const $errores=document.querySelector('#errores-acceder');
     let cantErrores;
     borrarErroresAnteriores();
 
@@ -72,4 +72,12 @@ function borrarErroresAnteriores(){
 
 document.querySelector('#div-acceder button').onclick=function(){
     validarInicioSesion();
+}
+
+function limpiarFormAcceder(){
+    document.querySelectorAll('#form-acceder input').forEach((input)=>{
+        input.value="";
+        input.classList.remove('error');
+    })
+    borrarErroresAnteriores();
 }

@@ -137,21 +137,25 @@ agregarTrabajos();
  * ENVIAR FORMULARIO
  */
 
+
 function validarFormarParte() {
-    const $formFormarParte = document.querySelector('#formar-parte form')
-    const erroresFormarParte = validarFormulario($formFormarParte);
+    const $formFP= document.querySelector('#formar-parte form');
+    const $ulErroresFP=document.querySelector('#formar-parte form ul');
+    const erroresFormarParte = validarFormulario($formFP);
     /* const descripcion = $formFormarParte.descripcion.value;
     const errorDescripcion = validarDescripcion(descripcion);
     //agrego clave descripcion y value errorDescripcion
     erroresFormarParte.descripcion = errorDescripcion; */
 
-    let cantErroresFP = manejarErrores(erroresFormarParte, $formFormarParte);
+
+    let cantErroresFP = manejarErrores(erroresFormarParte,$formFP,$ulErroresFP);
 
     if (cantErroresFP === 0) {
         document.querySelector('#formar-parte').className = 'oculto';
         document.querySelector('#exitoFP').className = 'text-center';
         setTimeout(function () {
-            window.location.href = 'index.html';
+            irInicio();
+            document.querySelector('#exitoFP').className = 'oculto';
         }, 1000)
     }
 }
@@ -159,3 +163,13 @@ function validarFormarParte() {
 document.querySelector('#formar-parte button').onclick = function () {
     validarFormarParte();
 }
+
+//LIMPIO EL FORMULARIO Y LOS ERRORES EN CASO DE SALIR DE ESTA PAGINA LUEGO DE MOSTRARME LOS ERRORES
+function limpiarFormFP(){
+    document.querySelectorAll('#formar-parte form input').forEach((input)=>{
+        input.value='';
+        input.classList.remove('error');
+    })
+    borrarErroresAnterioresFPD();
+}
+

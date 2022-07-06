@@ -252,11 +252,11 @@ function validarFormulario($form){
 
 
 
-function manejarErrores(errores,$form){
+function manejarErrores(errores,$form,$ulErrores){
     const keys=Object.keys(errores);
-    const $errores=document.querySelector('#errores');
+    
     let cantidadErrores=0;
-    borrarErroresAnteriores();
+    borrarErroresAnterioresFPD();
 
     keys.forEach(function(key){
         const error=errores[key];
@@ -266,7 +266,7 @@ function manejarErrores(errores,$form){
             const $error=document.createElement('li');
             $error.innerText=error;
             $error.className='existeError';
-            $errores.appendChild($error);
+            $ulErrores.appendChild($error);
         }else{
             $form[key].classList.remove('error');
         }
@@ -275,9 +275,11 @@ function manejarErrores(errores,$form){
 
 }
 
-function borrarErroresAnteriores(){
+function borrarErroresAnterioresFPD(){
     const $erroresAnteriores=document.querySelectorAll('.existeError');
     for(let i=0;i<$erroresAnteriores.length;i++){
         $erroresAnteriores[i].remove();
     }
 }
+
+
