@@ -126,9 +126,7 @@
              opacar();
          },500);
      },
-     
      5000);
- 
  
  
  function aclarar(){
@@ -252,9 +250,10 @@
  
  function validarAdopcion(){
      const $formAdopcion=document.querySelector('#formAdopcion form');
+     const $ulErrores=document.querySelector('#formAdopcion form ul');
      const erroresAdopcion=validarFormulario($formAdopcion);
      const idGato=document.querySelector('#getId').textContent;
-     let cantErrores=manejarErrores(erroresAdopcion,$formAdopcion);
+     let cantErrores=manejarErrores(erroresAdopcion,$formAdopcion,$ulErrores);
      const nombre=$formAdopcion.nombre.value;
      if(cantErrores===0){
          document.querySelector("#detalles").className='oculto';
@@ -271,11 +270,21 @@
      }
  }
  
+ //esta se ejecuta cuando vuelvo a presionar ENVIAR. Los errores ya los limpió en manejarErrores.
  function limpiarFormulario(){
      const $form=document.querySelectorAll('#formAdopcion input');
      $form.forEach(function(input){
          input.value='';
      })
+ }
+ 
+ //esta fc. la ejecuto cuando me voy de la seccion sin enviar el formulario.
+ function limpiarFormAdoptar(){
+     document.querySelectorAll('#formAdopcion input').forEach((input)=>{
+         input.value="";
+         input.classList.remove('error');
+     })
+     borrarErroresAnterioresFPD();
  }
  
  function informarSolicitud(id,nombre){
